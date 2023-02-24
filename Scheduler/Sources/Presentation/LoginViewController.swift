@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  Scheduler
 //
 //  Created by rae on 2023/02/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+final class LoginViewController: UIViewController {
     
     private lazy var kakaoButton: UIButton = {
         let button = UIButton()
@@ -30,7 +30,7 @@ final class ViewController: UIViewController {
     
 }
 
-private extension ViewController {
+private extension LoginViewController {
     func setup() {
         setupLayout()
     }
