@@ -55,8 +55,8 @@ final class LoginViewController: UIViewController {
         let button = LoginButton(
             image: UIImage(named: "naver"),
             title: "네이버로 계속하기",
-            titleColor: UIColor(named: "naverTextColor"),
-            backgroundColor: UIColor(named: "naverColor")
+            titleColor: UIColor.naverText,
+            backgroundColor: UIColor.naverBackground
         )
         button.addTarget(self, action: #selector(naverButtonDidTap(_:)), for: .touchUpInside)
         return button
@@ -66,8 +66,8 @@ final class LoginViewController: UIViewController {
         let button = LoginButton(
             image: UIImage(named: "kakao"),
             title: "카카오톡으로 계속하기",
-            titleColor: UIColor(named: "kakaoTextColor"),
-            backgroundColor: UIColor(named: "kakaoColor")
+            titleColor: UIColor.kakaoText,
+            backgroundColor: UIColor.kakaoBackground
         )
         button.addTarget(self, action: #selector(kakaoButtonDidTap(_:)), for: .touchUpInside )
         return button
@@ -77,8 +77,8 @@ final class LoginViewController: UIViewController {
         let button = LoginButton(
             image: UIImage(named: "apple"),
             title: "Apple로 계속하기",
-            titleColor: UIColor(named: "appleTextColor"),
-            backgroundColor: UIColor(named: "appleColor")
+            titleColor: UIColor.appleText,
+            backgroundColor: UIColor.appleBackground
         )
         button.addTarget(self, action: #selector(appleButtonDidTap(_:)), for: .touchUpInside)
         return button

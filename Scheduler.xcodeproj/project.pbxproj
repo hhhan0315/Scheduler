@@ -20,6 +20,7 @@
 		0131CC0E29A8DEC90066ED1E /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0131CC0D29A8DEC90066ED1E /* LoginButton.swift */; };
 		0131CC1029A8E1AF0066ED1E /* UIFont+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0131CC0F29A8E1AF0066ED1E /* UIFont+extension.swift */; };
 		016811AC29AEEDEA0016F7BC /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016811AB29AEEDEA0016F7BC /* Authentication.swift */; };
+		016811AE29AF811A0016F7BC /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016811AD29AF811A0016F7BC /* UIColor+extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		0131CC0D29A8DEC90066ED1E /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		0131CC0F29A8E1AF0066ED1E /* UIFont+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+extension.swift"; sourceTree = "<group>"; };
 		016811AB29AEEDEA0016F7BC /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		016811AD29AF811A0016F7BC /* UIColor+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				0131CBFD29A7A5930066ED1E /* Bundle+extension.swift */,
 				0131CC0929A8A6430066ED1E /* UIView+extension.swift */,
 				0131CC0F29A8E1AF0066ED1E /* UIFont+extension.swift */,
+				016811AD29AF811A0016F7BC /* UIColor+extension.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				0131CC1029A8E1AF0066ED1E /* UIFont+extension.swift in Sources */,
 				0131CC0829A84F3A0066ED1E /* LoginViewModel.swift in Sources */,
 				0131CC0C29A8AA150066ED1E /* AuthenticationRepository.swift in Sources */,
+				016811AE29AF811A0016F7BC /* UIColor+extension.swift in Sources */,
 				0131CC0A29A8A6430066ED1E /* UIView+extension.swift in Sources */,
 				0131CBFE29A7A5930066ED1E /* Bundle+extension.swift in Sources */,
 			);
