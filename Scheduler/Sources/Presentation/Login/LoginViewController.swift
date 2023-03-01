@@ -29,35 +29,64 @@ final class LoginViewController: UIViewController {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "일정 관리"
-        label.font = .preferredFont(for: .largeTitle, weight: .bold)
+        label.text = "안녕하세요👋\n일정관리에 오신걸 환영해요!"
+        label.font = .preferredFont(for: .title2, weight: .semibold)
         label.textColor = .label
+        label.numberOfLines = 2
+        
+        guard let text = label.text else {
+            return label
+        }
+        let attributedString = NSMutableAttributedString(string: text)
+        attributedString.addAttribute(.foregroundColor, value: UIColor.red, range: (text as NSString).range(of: "일정관리"))
+        label.attributedText = attributedString
         return label
     }()
     
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.text = "SNS 계정으로 로그인"
-        label.font = .preferredFont(for: .callout, weight: .bold)
+        label.font = .preferredFont(for: .callout, weight: .semibold)
         label.textColor = .systemGray
         return label
     }()
     
     private lazy var naverButton: LoginButton = {
-        let button = LoginButton(image: UIImage(named: "naver"))
+        let button = LoginButton(
+            image: UIImage(named: "naver"),
+            title: "네이버로 계속하기",
+            titleColor: UIColor(named: "naverTextColor"),
+            backgroundColor: UIColor(named: "naverColor")
+        )
         button.addTarget(self, action: #selector(naverButtonDidTap(_:)), for: .touchUpInside)
         return button
     }()
     
     private lazy var kakaoButton: LoginButton = {
-        let button = LoginButton(image: UIImage(named: "kakao"))
+        let button = LoginButton(
+            image: UIImage(named: "kakao"),
+            title: "카카오톡으로 계속하기",
+            titleColor: UIColor(named: "kakaoTextColor"),
+            backgroundColor: UIColor(named: "kakaoColor")
+        )
         button.addTarget(self, action: #selector(kakaoButtonDidTap(_:)), for: .touchUpInside )
         return button
     }()
     
+    private lazy var appleButton: LoginButton = {
+        let button = LoginButton(
+            image: UIImage(named: "apple"),
+            title: "Apple로 계속하기",
+            titleColor: UIColor(named: "appleTextColor"),
+            backgroundColor: UIColor(named: "appleColor")
+        )
+        button.addTarget(self, action: #selector(appleButtonDidTap(_:)), for: .touchUpInside)
+        return button
+    }()
+    
     private lazy var loginButtonStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [naverButton, kakaoButton])
-        stackView.axis = .horizontal
+        let stackView = UIStackView(arrangedSubviews: [naverButton, kakaoButton, appleButton])
+        stackView.axis = .vertical
         stackView.spacing = 16
         return stackView
     }()
@@ -81,12 +110,14 @@ private extension LoginViewController {
         view.backgroundColor = .systemBackground
         view.addSubviews(titleLabel, descriptionLabel, loginButtonStackView)
         NSLayoutConstraint.activate([
-            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            titleLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -100.0),
+            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 150.0),
+            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16.0),
+            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16.0),
             descriptionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            descriptionLabel.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: 100.0),
-            loginButtonStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            loginButtonStackView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 20.0)
+            descriptionLabel.bottomAnchor.constraint(equalTo: view.centerYAnchor),
+            loginButtonStackView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 20.0),
+            loginButtonStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16.0),
+            loginButtonStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16.0),
         ])
     }
     
@@ -96,5 +127,9 @@ private extension LoginViewController {
     
     @objc func kakaoButtonDidTap(_ sender: LoginButton) {
         viewModel.input.kakaoButtonDidTap()
+    }
+    
+    @objc func appleButtonDidTap(_ sender: LoginButton) {
+        
     }
 }
